@@ -1,0 +1,72 @@
+{% extends "rms_app/base.html" %}
+{% load crispy_forms_tags %}
+{% load static  %}
+<link rel="stylesheet" href="{% static './static/login.css' %}">
+
+
+{% block content%}
+  <!-- <div class="login-section">
+      <form method="POST">
+          {% csrf_token %}
+          <fieldset>
+            <legend class="border-bottom mb-4">Log in</legend>
+              {{ form|crispy }}
+          </fieldset>
+          <br>
+          <div class="form-group">
+              <button  type="submit">Log In</button>
+          </div>
+      </form>
+      <br>
+      <a  href="{% url 'register' %}">Not Registered? </a>
+  </div> -->
+<div class="login-section">
+  <div class="overlay">
+    <form class="form_login" method="POST">
+      {% csrf_token %}
+      <div class="con">
+        <header class="head-form">
+          <h2 class="login-header">Log In</h2>
+      
+          <p class="bakchodi">login here using your username and password</p>
+        </header>
+        <br>
+        <div class="field-set">
+          {{ form|crispy }} 
+          <!-- <span class="input-item">
+            <i class="fa fa-user-circle"></i>
+          </span>
+          <input class="form-input" id="txt-input" type="text" placeholder="@UserName" required>
+  
+          <br>
+  
+  
+          <span class="input-item">
+            <i class="fa fa-key"></i>
+          </span>
+          
+          <input class="form-input" type="password" placeholder="Password" id="pwd" name="password" required>
+  
+          <span>
+            <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
+          </span>
+  
+          <br> -->
+     
+          <button class="button-log log-in" type="submit"> Log In </button>
+        </div>
+  
+       
+        <div class="other">
+        
+             
+        </div>
+      </div>
+    </form>
+    <a class="button-log submits sign-up" href="{% url 'register' %}">Sign Up fuck
+           
+      <i class="fa fa-user-plus" aria-hidden="true"></i>
+  </a> 
+  </div>
+</div>
+ {% endblock content %}
